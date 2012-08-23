@@ -1,0 +1,3 @@
+[submodule "deep/gui"]
+	path = deep/gui
+	url = git@github.com:NHDaly/SDL-GUI-Library.git
