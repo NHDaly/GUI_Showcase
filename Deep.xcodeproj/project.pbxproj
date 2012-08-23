@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		234A801915E6C6DD00C4AFBC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234A801815E6C6DD00C4AFBC /* Cocoa.framework */; };
+		234A802315E6C6DE00C4AFBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 234A802115E6C6DE00C4AFBC /* InfoPlist.strings */; };
+		234A802915E6C6DE00C4AFBC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 234A802715E6C6DE00C4AFBC /* Credits.rtf */; };
+		2390F1D515E6C73000A0B545 /* GameDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1B115E6C72F00A0B545 /* GameDisplay.cpp */; };
+		2390F1D615E6C73000A0B545 /* GUIAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1B315E6C72F00A0B545 /* GUIAudio.cpp */; };
+		2390F1D715E6C73000A0B545 /* GUIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1B515E6C72F00A0B545 /* GUIButton.cpp */; };
+		2390F1D815E6C73000A0B545 /* GUIController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1B715E6C72F00A0B545 /* GUIController.cpp */; };
+		2390F1D915E6C73000A0B545 /* GUIImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1B915E6C72F00A0B545 /* GUIImage.cpp */; };
+		2390F1DA15E6C73000A0B545 /* GUIImageCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1BB15E6C72F00A0B545 /* GUIImageCache.cpp */; };
+		2390F1DB15E6C73000A0B545 /* GUILetter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1BD15E6C72F00A0B545 /* GUILetter.cpp */; };
+		2390F1DC15E6C73000A0B545 /* GUIText_box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1BF15E6C72F00A0B545 /* GUIText_box.cpp */; };
+		2390F1DD15E6C73000A0B545 /* GUITimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1C115E6C72F00A0B545 /* GUITimer.cpp */; };
+		2390F1DE15E6C73000A0B545 /* GUIUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1C315E6C72F00A0B545 /* GUIUtility.cpp */; };
+		2390F1DF15E6C73000A0B545 /* GUIValBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1C515E6C72F00A0B545 /* GUIValBox.cpp */; };
+		2390F1E015E6C73000A0B545 /* GUIView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1C715E6C72F00A0B545 /* GUIView.cpp */; };
+		2390F1E115E6C73000A0B545 /* GUIView_Ctrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1C915E6C72F00A0B545 /* GUIView_Ctrl.cpp */; };
+		2390F1E215E6C73000A0B545 /* GUIWin_Ctrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1CB15E6C72F00A0B545 /* GUIWin_Ctrl.cpp */; };
+		2390F1E315E6C73000A0B545 /* GUIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1CD15E6C72F00A0B545 /* GUIWindow.cpp */; };
+		2390F1E415E6C73000A0B545 /* Letter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1CF15E6C72F00A0B545 /* Letter.cpp */; };
+		2390F1E515E6C73000A0B545 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1D315E6C72F00A0B545 /* SDLMain.m */; };
+		2390F1EA15E6C74900A0B545 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E615E6C74900A0B545 /* SDL.framework */; };
+		2390F1EB15E6C74900A0B545 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E715E6C74900A0B545 /* SDL_image.framework */; };
+		2390F1EC15E6C74900A0B545 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E815E6C74900A0B545 /* SDL_mixer.framework */; };
+		2390F1ED15E6C74900A0B545 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E915E6C74900A0B545 /* SDL_ttf.framework */; };
+		2390F1EF15E6C76C00A0B545 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2390F1E615E6C74900A0B545 /* SDL.framework */; };
+		2390F1F015E6C76C00A0B545 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2390F1E715E6C74900A0B545 /* SDL_image.framework */; };
+		2390F1F115E6C76C00A0B545 /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2390F1E815E6C74900A0B545 /* SDL_mixer.framework */; };
+		2390F1F215E6C76C00A0B545 /* SDL_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2390F1E915E6C74900A0B545 /* SDL_ttf.framework */; };
+		2390F1F415E6C78500A0B545 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1F315E6C78500A0B545 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2390F1EE15E6C75E00A0B545 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2390F1EF15E6C76C00A0B545 /* SDL.framework in CopyFiles */,
+				2390F1F015E6C76C00A0B545 /* SDL_image.framework in CopyFiles */,
+				2390F1F115E6C76C00A0B545 /* SDL_mixer.framework in CopyFiles */,
+				2390F1F215E6C76C00A0B545 /* SDL_ttf.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		234A801415E6C6DD00C4AFBC /* Deep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		234A801815E6C6DD00C4AFBC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		234A801B15E6C6DD00C4AFBC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		234A801C15E6C6DD00C4AFBC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		234A801D15E6C6DD00C4AFBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		234A802015E6C6DE00C4AFBC /* Deep-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Deep-Info.plist"; sourceTree = "<group>"; };
+		234A802215E6C6DE00C4AFBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		234A802615E6C6DE00C4AFBC /* Deep-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Deep-Prefix.pch"; sourceTree = "<group>"; };
+		234A802815E6C6DE00C4AFBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2390F1B015E6C72F00A0B545 /* Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compatibility.h; sourceTree = "<group>"; };
+		2390F1B115E6C72F00A0B545 /* GameDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameDisplay.cpp; sourceTree = "<group>"; };
+		2390F1B215E6C72F00A0B545 /* GameDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDisplay.h; sourceTree = "<group>"; };
+		2390F1B315E6C72F00A0B545 /* GUIAudio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIAudio.cpp; sourceTree = "<group>"; };
+		2390F1B415E6C72F00A0B545 /* GUIAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIAudio.h; sourceTree = "<group>"; };
+		2390F1B515E6C72F00A0B545 /* GUIButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIButton.cpp; sourceTree = "<group>"; };
+		2390F1B615E6C72F00A0B545 /* GUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIButton.h; sourceTree = "<group>"; };
+		2390F1B715E6C72F00A0B545 /* GUIController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIController.cpp; sourceTree = "<group>"; };
+		2390F1B815E6C72F00A0B545 /* GUIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIController.h; sourceTree = "<group>"; };
+		2390F1B915E6C72F00A0B545 /* GUIImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIImage.cpp; sourceTree = "<group>"; };
+		2390F1BA15E6C72F00A0B545 /* GUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIImage.h; sourceTree = "<group>"; };
+		2390F1BB15E6C72F00A0B545 /* GUIImageCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIImageCache.cpp; sourceTree = "<group>"; };
+		2390F1BC15E6C72F00A0B545 /* GUIImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIImageCache.h; sourceTree = "<group>"; };
+		2390F1BD15E6C72F00A0B545 /* GUILetter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUILetter.cpp; sourceTree = "<group>"; };
+		2390F1BE15E6C72F00A0B545 /* GUILetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUILetter.h; sourceTree = "<group>"; };
+		2390F1BF15E6C72F00A0B545 /* GUIText_box.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIText_box.cpp; sourceTree = "<group>"; };
+		2390F1C015E6C72F00A0B545 /* GUIText_box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIText_box.h; sourceTree = "<group>"; };
+		2390F1C115E6C72F00A0B545 /* GUITimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUITimer.cpp; sourceTree = "<group>"; };
+		2390F1C215E6C72F00A0B545 /* GUITimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITimer.h; sourceTree = "<group>"; };
+		2390F1C315E6C72F00A0B545 /* GUIUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIUtility.cpp; sourceTree = "<group>"; };
+		2390F1C415E6C72F00A0B545 /* GUIUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIUtility.h; sourceTree = "<group>"; };
+		2390F1C515E6C72F00A0B545 /* GUIValBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIValBox.cpp; sourceTree = "<group>"; };
+		2390F1C615E6C72F00A0B545 /* GUIValBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIValBox.h; sourceTree = "<group>"; };
+		2390F1C715E6C72F00A0B545 /* GUIView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIView.cpp; sourceTree = "<group>"; };
+		2390F1C815E6C72F00A0B545 /* GUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIView.h; sourceTree = "<group>"; };
+		2390F1C915E6C72F00A0B545 /* GUIView_Ctrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIView_Ctrl.cpp; sourceTree = "<group>"; };
+		2390F1CA15E6C72F00A0B545 /* GUIView_Ctrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIView_Ctrl.h; sourceTree = "<group>"; };
+		2390F1CB15E6C72F00A0B545 /* GUIWin_Ctrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIWin_Ctrl.cpp; sourceTree = "<group>"; };
+		2390F1CC15E6C72F00A0B545 /* GUIWin_Ctrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIWin_Ctrl.h; sourceTree = "<group>"; };
+		2390F1CD15E6C72F00A0B545 /* GUIWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIWindow.cpp; sourceTree = "<group>"; };
+		2390F1CE15E6C72F00A0B545 /* GUIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIWindow.h; sourceTree = "<group>"; };
+		2390F1CF15E6C72F00A0B545 /* Letter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Letter.cpp; sourceTree = "<group>"; };
+		2390F1D015E6C72F00A0B545 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
+		2390F1D115E6C72F00A0B545 /* Ptr_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ptr_config.h; sourceTree = "<group>"; };
+		2390F1D215E6C72F00A0B545 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = "<group>"; };
+		2390F1D315E6C72F00A0B545 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
+		2390F1E615E6C74900A0B545 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = Library/Frameworks/SDL.framework; sourceTree = SDKROOT; };
+		2390F1E715E6C74900A0B545 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = Library/Frameworks/SDL_image.framework; sourceTree = SDKROOT; };
+		2390F1E815E6C74900A0B545 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = Library/Frameworks/SDL_mixer.framework; sourceTree = SDKROOT; };
+		2390F1E915E6C74900A0B545 /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_ttf.framework; path = Library/Frameworks/SDL_ttf.framework; sourceTree = SDKROOT; };
+		2390F1F315E6C78500A0B545 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		234A801115E6C6DD00C4AFBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2390F1EA15E6C74900A0B545 /* SDL.framework in Frameworks */,
+				2390F1EB15E6C74900A0B545 /* SDL_image.framework in Frameworks */,
+				2390F1EC15E6C74900A0B545 /* SDL_mixer.framework in Frameworks */,
+				2390F1ED15E6C74900A0B545 /* SDL_ttf.framework in Frameworks */,
+				234A801915E6C6DD00C4AFBC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		234A800915E6C6DD00C4AFBC = {
+			isa = PBXGroup;
+			children = (
+				234A801E15E6C6DD00C4AFBC /* Deep */,
+				234A801715E6C6DD00C4AFBC /* Frameworks */,
+				234A801515E6C6DD00C4AFBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		234A801515E6C6DD00C4AFBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				234A801415E6C6DD00C4AFBC /* Deep.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		234A801715E6C6DD00C4AFBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2390F1E615E6C74900A0B545 /* SDL.framework */,
+				2390F1E715E6C74900A0B545 /* SDL_image.framework */,
+				2390F1E815E6C74900A0B545 /* SDL_mixer.framework */,
+				2390F1E915E6C74900A0B545 /* SDL_ttf.framework */,
+				234A801815E6C6DD00C4AFBC /* Cocoa.framework */,
+				234A801A15E6C6DD00C4AFBC /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		234A801A15E6C6DD00C4AFBC /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				234A801B15E6C6DD00C4AFBC /* AppKit.framework */,
+				234A801C15E6C6DD00C4AFBC /* CoreData.framework */,
+				234A801D15E6C6DD00C4AFBC /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		234A801E15E6C6DD00C4AFBC /* Deep */ = {
+			isa = PBXGroup;
+			children = (
+				2390F1F315E6C78500A0B545 /* main.cpp */,
+				2390F1AE15E6C72F00A0B545 /* gui */,
+				234A801F15E6C6DE00C4AFBC /* Supporting Files */,
+			);
+			name = Deep;
+			path = deep;
+			sourceTree = "<group>";
+		};
+		234A801F15E6C6DE00C4AFBC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				234A802015E6C6DE00C4AFBC /* Deep-Info.plist */,
+				234A802115E6C6DE00C4AFBC /* InfoPlist.strings */,
+				234A802615E6C6DE00C4AFBC /* Deep-Prefix.pch */,
+				234A802715E6C6DE00C4AFBC /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2390F1AE15E6C72F00A0B545 /* gui */ = {
+			isa = PBXGroup;
+			children = (
+				2390F1B015E6C72F00A0B545 /* Compatibility.h */,
+				2390F1B115E6C72F00A0B545 /* GameDisplay.cpp */,
+				2390F1B215E6C72F00A0B545 /* GameDisplay.h */,
+				2390F1B315E6C72F00A0B545 /* GUIAudio.cpp */,
+				2390F1B415E6C72F00A0B545 /* GUIAudio.h */,
+				2390F1B515E6C72F00A0B545 /* GUIButton.cpp */,
+				2390F1B615E6C72F00A0B545 /* GUIButton.h */,
+				2390F1B715E6C72F00A0B545 /* GUIController.cpp */,
+				2390F1B815E6C72F00A0B545 /* GUIController.h */,
+				2390F1B915E6C72F00A0B545 /* GUIImage.cpp */,
+				2390F1BA15E6C72F00A0B545 /* GUIImage.h */,
+				2390F1BB15E6C72F00A0B545 /* GUIImageCache.cpp */,
+				2390F1BC15E6C72F00A0B545 /* GUIImageCache.h */,
+				2390F1BD15E6C72F00A0B545 /* GUILetter.cpp */,
+				2390F1BE15E6C72F00A0B545 /* GUILetter.h */,
+				2390F1BF15E6C72F00A0B545 /* GUIText_box.cpp */,
+				2390F1C015E6C72F00A0B545 /* GUIText_box.h */,
+				2390F1C115E6C72F00A0B545 /* GUITimer.cpp */,
+				2390F1C215E6C72F00A0B545 /* GUITimer.h */,
+				2390F1C315E6C72F00A0B545 /* GUIUtility.cpp */,
+				2390F1C415E6C72F00A0B545 /* GUIUtility.h */,
+				2390F1C515E6C72F00A0B545 /* GUIValBox.cpp */,
+				2390F1C615E6C72F00A0B545 /* GUIValBox.h */,
+				2390F1C715E6C72F00A0B545 /* GUIView.cpp */,
+				2390F1C815E6C72F00A0B545 /* GUIView.h */,
+				2390F1C915E6C72F00A0B545 /* GUIView_Ctrl.cpp */,
+				2390F1CA15E6C72F00A0B545 /* GUIView_Ctrl.h */,
+				2390F1CB15E6C72F00A0B545 /* GUIWin_Ctrl.cpp */,
+				2390F1CC15E6C72F00A0B545 /* GUIWin_Ctrl.h */,
+				2390F1CD15E6C72F00A0B545 /* GUIWindow.cpp */,
+				2390F1CE15E6C72F00A0B545 /* GUIWindow.h */,
+				2390F1CF15E6C72F00A0B545 /* Letter.cpp */,
+				2390F1D015E6C72F00A0B545 /* Letter.h */,
+				2390F1D115E6C72F00A0B545 /* Ptr_config.h */,
+				2390F1D215E6C72F00A0B545 /* SDLMain.h */,
+				2390F1D315E6C72F00A0B545 /* SDLMain.m */,
+			);
+			path = gui;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		234A801315E6C6DD00C4AFBC /* Deep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 234A803215E6C6DE00C4AFBC /* Build configuration list for PBXNativeTarget "Deep" */;
+			buildPhases = (
+				234A801015E6C6DD00C4AFBC /* Sources */,
+				234A801115E6C6DD00C4AFBC /* Frameworks */,
+				234A801215E6C6DD00C4AFBC /* Resources */,
+				2390F1EE15E6C75E00A0B545 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Deep;
+			productName = Deep;
+			productReference = 234A801415E6C6DD00C4AFBC /* Deep.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		234A800B15E6C6DD00C4AFBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Lions Entertainment";
+			};
+			buildConfigurationList = 234A800E15E6C6DD00C4AFBC /* Build configuration list for PBXProject "Deep" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 234A800915E6C6DD00C4AFBC;
+			productRefGroup = 234A801515E6C6DD00C4AFBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				234A801315E6C6DD00C4AFBC /* Deep */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		234A801215E6C6DD00C4AFBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				234A802315E6C6DE00C4AFBC /* InfoPlist.strings in Resources */,
+				234A802915E6C6DE00C4AFBC /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		234A801015E6C6DD00C4AFBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2390F1D515E6C73000A0B545 /* GameDisplay.cpp in Sources */,
+				2390F1D615E6C73000A0B545 /* GUIAudio.cpp in Sources */,
+				2390F1D715E6C73000A0B545 /* GUIButton.cpp in Sources */,
+				2390F1D815E6C73000A0B545 /* GUIController.cpp in Sources */,
+				2390F1D915E6C73000A0B545 /* GUIImage.cpp in Sources */,
+				2390F1DA15E6C73000A0B545 /* GUIImageCache.cpp in Sources */,
+				2390F1DB15E6C73000A0B545 /* GUILetter.cpp in Sources */,
+				2390F1DC15E6C73000A0B545 /* GUIText_box.cpp in Sources */,
+				2390F1DD15E6C73000A0B545 /* GUITimer.cpp in Sources */,
+				2390F1DE15E6C73000A0B545 /* GUIUtility.cpp in Sources */,
+				2390F1DF15E6C73000A0B545 /* GUIValBox.cpp in Sources */,
+				2390F1E015E6C73000A0B545 /* GUIView.cpp in Sources */,
+				2390F1E115E6C73000A0B545 /* GUIView_Ctrl.cpp in Sources */,
+				2390F1E215E6C73000A0B545 /* GUIWin_Ctrl.cpp in Sources */,
+				2390F1E315E6C73000A0B545 /* GUIWindow.cpp in Sources */,
+				2390F1E415E6C73000A0B545 /* Letter.cpp in Sources */,
+				2390F1E515E6C73000A0B545 /* SDLMain.m in Sources */,
+				2390F1F415E6C78500A0B545 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		234A802115E6C6DE00C4AFBC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				234A802215E6C6DE00C4AFBC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		234A802715E6C6DE00C4AFBC /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				234A802815E6C6DE00C4AFBC /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		234A803015E6C6DE00C4AFBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		234A803115E6C6DE00C4AFBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		234A803315E6C6DE00C4AFBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Deep/Deep-Prefix.pch";
+				INFOPLIST_FILE = "Deep/Deep-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		234A803415E6C6DE00C4AFBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Deep/Deep-Prefix.pch";
+				INFOPLIST_FILE = "Deep/Deep-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		234A800E15E6C6DD00C4AFBC /* Build configuration list for PBXProject "Deep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				234A803015E6C6DE00C4AFBC /* Debug */,
+				234A803115E6C6DE00C4AFBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		234A803215E6C6DE00C4AFBC /* Build configuration list for PBXNativeTarget "Deep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				234A803315E6C6DE00C4AFBC /* Debug */,
+				234A803415E6C6DE00C4AFBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 234A800B15E6C6DD00C4AFBC /* Project object */;
+}
