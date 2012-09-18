@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2321564C15FDDB4E00516E92 /* NewGUIView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2321564B15FDDB4E00516E92 /* NewGUIView.cpp */; };
 		234A801915E6C6DD00C4AFBC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234A801815E6C6DD00C4AFBC /* Cocoa.framework */; };
 		234A802315E6C6DE00C4AFBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 234A802115E6C6DE00C4AFBC /* InfoPlist.strings */; };
 		234A802915E6C6DE00C4AFBC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 234A802715E6C6DE00C4AFBC /* Credits.rtf */; };
@@ -35,7 +36,12 @@
 		2390F1F015E6C76C00A0B545 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2390F1E715E6C74900A0B545 /* SDL_image.framework */; };
 		2390F1F115E6C76C00A0B545 /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2390F1E815E6C74900A0B545 /* SDL_mixer.framework */; };
 		2390F1F215E6C76C00A0B545 /* SDL_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2390F1E915E6C74900A0B545 /* SDL_ttf.framework */; };
-		2390F1F415E6C78500A0B545 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1F315E6C78500A0B545 /* main.cpp */; };
+		23A3DD6E15E6F0160014DE2F /* images in Resources */ = {isa = PBXBuildFile; fileRef = 23A3DD6D15E6F0160014DE2F /* images */; };
+		23A3DD8E15E6F9CC0014DE2F /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 23A3DD8D15E6F9CC0014DE2F /* fonts */; };
+		23A67AEC15E6CAC60056786C /* Compatibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A67AEB15E6CAC60056786C /* Compatibility.cpp */; };
+		23A824C61608474D009D0944 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1F315E6C78500A0B545 /* main.cpp */; };
+		23A824C916084962009D0944 /* NewGUIImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A824C816084962009D0944 /* NewGUIImageView.cpp */; };
+		23A824CD16085067009D0944 /* NewGUIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A824CC16085066009D0944 /* NewGUIWindow.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +61,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2321564B15FDDB4E00516E92 /* NewGUIView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIView.cpp; sourceTree = "<group>"; };
+		2321564E15FDDB5F00516E92 /* NewGUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIView.h; sourceTree = "<group>"; };
 		234A801415E6C6DD00C4AFBC /* Deep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		234A801815E6C6DD00C4AFBC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		234A801B15E6C6DD00C4AFBC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -105,6 +113,14 @@
 		2390F1E815E6C74900A0B545 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = Library/Frameworks/SDL_mixer.framework; sourceTree = SDKROOT; };
 		2390F1E915E6C74900A0B545 /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_ttf.framework; path = Library/Frameworks/SDL_ttf.framework; sourceTree = SDKROOT; };
 		2390F1F315E6C78500A0B545 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		23A3DD6D15E6F0160014DE2F /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		23A3DD8D15E6F9CC0014DE2F /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = "../../../SDL Folder/NathansSDLFramework/NathansSDL/fonts"; sourceTree = "<group>"; };
+		23A67AEB15E6CAC60056786C /* Compatibility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compatibility.cpp; sourceTree = "<group>"; };
+		23A824C816084962009D0944 /* NewGUIImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIImageView.cpp; sourceTree = "<group>"; };
+		23A824CA16084972009D0944 /* NewGUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIImageView.h; sourceTree = "<group>"; };
+		23A824CB16084F76009D0944 /* NewGUIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIWindow.h; sourceTree = "<group>"; };
+		23A824CC16085066009D0944 /* NewGUIWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIWindow.cpp; sourceTree = "<group>"; };
+		23E064881608373A0027E02B /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				2390F1F315E6C78500A0B545 /* main.cpp */,
+				23E064881608373A0027E02B /* test.cpp */,
 				2390F1AE15E6C72F00A0B545 /* gui */,
 				234A801F15E6C6DE00C4AFBC /* Supporting Files */,
 			);
@@ -177,6 +194,8 @@
 		234A801F15E6C6DE00C4AFBC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				23A3DD8D15E6F9CC0014DE2F /* fonts */,
+				23A3DD6D15E6F0160014DE2F /* images */,
 				234A802015E6C6DE00C4AFBC /* Deep-Info.plist */,
 				234A802115E6C6DE00C4AFBC /* InfoPlist.strings */,
 				234A802615E6C6DE00C4AFBC /* Deep-Prefix.pch */,
@@ -188,6 +207,13 @@
 		2390F1AE15E6C72F00A0B545 /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				2321564B15FDDB4E00516E92 /* NewGUIView.cpp */,
+				2321564E15FDDB5F00516E92 /* NewGUIView.h */,
+				23A824C816084962009D0944 /* NewGUIImageView.cpp */,
+				23A824CA16084972009D0944 /* NewGUIImageView.h */,
+				23A824CC16085066009D0944 /* NewGUIWindow.cpp */,
+				23A824CB16084F76009D0944 /* NewGUIWindow.h */,
+				23A67AEB15E6CAC60056786C /* Compatibility.cpp */,
 				2390F1B015E6C72F00A0B545 /* Compatibility.h */,
 				2390F1B115E6C72F00A0B545 /* GameDisplay.cpp */,
 				2390F1B215E6C72F00A0B545 /* GameDisplay.h */,
@@ -282,6 +308,8 @@
 			files = (
 				234A802315E6C6DE00C4AFBC /* InfoPlist.strings in Resources */,
 				234A802915E6C6DE00C4AFBC /* Credits.rtf in Resources */,
+				23A3DD6E15E6F0160014DE2F /* images in Resources */,
+				23A3DD8E15E6F9CC0014DE2F /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +337,11 @@
 				2390F1E315E6C73000A0B545 /* GUIWindow.cpp in Sources */,
 				2390F1E415E6C73000A0B545 /* Letter.cpp in Sources */,
 				2390F1E515E6C73000A0B545 /* SDLMain.m in Sources */,
-				2390F1F415E6C78500A0B545 /* main.cpp in Sources */,
+				23A67AEC15E6CAC60056786C /* Compatibility.cpp in Sources */,
+				2321564C15FDDB4E00516E92 /* NewGUIView.cpp in Sources */,
+				23A824C61608474D009D0944 /* main.cpp in Sources */,
+				23A824C916084962009D0944 /* NewGUIImageView.cpp in Sources */,
+				23A824CD16085067009D0944 /* NewGUIWindow.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
