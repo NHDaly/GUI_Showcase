@@ -59,17 +59,20 @@ int test(int argc, char **argv) {
     
     GUIImage bg = GUIImage::create_blank(500,500);
     SDL_FillRect(bg, 0, SDL_MapRGB(bg->format, 155, 155, 155));
-    
+
+    GUIImage bg2 = GUIImage::create_blank(200,200);
+    SDL_FillRect(bg2, 0, SDL_MapRGB(bg2->format, 255, 100, 100));
+
     NewGUIView* nv = new NewGUIImageView(bg);
     NewGUIView* nv1 = new NewGUIView(50,50);
-    NewGUIView* nv2 = new NewGUIView(200,200);
+    NewGUIView* nv2 = new NewGUIImageView(bg2);
+    NewGUIView* nv3 = new NewGUIView(20,20);
     
     window.set_main_view(nv);
     
     nv->attach_subview(nv1, DispPoint(10,10));
     //    nv->attach_subview(nv2, DispPoint(30,10));
     
-    nv->print_children();
     cout << "refresh one: should draw nv1 onto nv" << endl;
     window.refresh();
     
@@ -78,30 +81,49 @@ int test(int argc, char **argv) {
     window.refresh();
     
     nv->attach_subview(nv2, DispPoint(100,100));
-    nv->move_subview(nv2, DispPoint(0,0));
+    nv->move_subview(nv2, DispPoint(30,30));
     cout << "refresh three: should draw nv1 AND nv2 onto nv" << endl;
     window.refresh();
     
-    nv->print_children();
     
     
 //    display_image(nv->image, GUIWin_Ctrl::get()->get_window()->screen,
 //                  DispPoint(), true);
     window.refresh();
-    SDL_Delay(2000);
+//    SDL_Delay(2000);
     
-    GUIImage bubble("images/slider_bubble.bmp");
     
-    display_image(bubble, nv2->image, DispPoint(100,10), false);
+    NewGUIImageView *bubble = new NewGUIImageView(GUIImage("images/slider_bubble.bmp"));
+    nv2->attach_subview(bubble, DispPoint(120, 100));
 
-    nv2->draw_onto_self(nv1, DispPoint());
+    nv2->attach_subview(nv3, DispPoint(180, 150));
 
     window.refresh();
 //    display_image(nv->image, GUIWin_Ctrl::get()->get_window()->screen,
 //                  DispPoint(), true);
     window.refresh();
-    SDL_Delay(2000);
    
+    
+    bool running = true;
+    while(running) {
+        SDL_Event event;
+
+        while (SDL_PollEvent(&event) && running){
+            switch (event.type) {
+                case SDL_MOUSEBUTTONDOWN:{
+                    SDL_MouseButtonEvent click = event.button;
+                    NewGUIView* clicked_view =
+                        window.get_main_view()->
+                                get_view_from_point(DispPoint(click.x, click.y));
+//                    clicked_view->attach_subview(bubble, DispPoint(click.x, click.y));
+                    cout << clicked_view << endl;
+
+                }
+            }
+        }
+    }
+    
+    
     
     nv->remove_subview(nv2);
     
@@ -122,6 +144,7 @@ int test(int argc, char **argv) {
     
     return 0;
 }
+
 
 int main (int argc, char **argv) {
  
