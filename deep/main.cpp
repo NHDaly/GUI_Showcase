@@ -14,19 +14,15 @@
 #include "gui/GUIButton.h"
 #include "gui/GUIValBox.h"
 
+#include "gui/NewGUIApp.h"
 #include "gui/NewGUIView.h"
+#include "gui/NewGUIButton.h"
 
 #include <iostream>
 using namespace std;
 
 int user_main (int argc, char **argv);
 
-class QuitAction {
-public:
-    void operator()() {
-        throw QuitAction();
-    }
-};
 
 int user_main (int argc, char **argv) {
     
@@ -90,7 +86,7 @@ int test(int argc, char **argv) {
     
     NewGUIWindow window(600,600, "Window 1");
     
-    GUIImage bg = GUIImage::create_blank(200,500);
+    GUIImage bg = GUIImage::create_blank(500,500);
     SDL_FillRect(bg, 0, SDL_MapRGB(bg->format, 155, 155, 155));
 
     GUIImage bg2 = GUIImage::create_blank(200,200);
@@ -101,7 +97,7 @@ int test(int argc, char **argv) {
     NewGUIView* nv2 = new NewGUIImageView(bg2);
     NewGUIView* nv3 = new NewGUIView(20,20);
     
-//    window.attach_view(nv, DispPoint());
+    window.attach_subview(nv, DispPoint());
     
     nv->attach_subview(nv1, DispPoint(10,10));
     //    nv->attach_subview(nv2, DispPoint(30,10));
@@ -137,41 +133,8 @@ int test(int argc, char **argv) {
 //                  DispPoint(), true);
     window.refresh();
    
-    
-    
-    bool running = true;
-    while(running) {
-        SDL_Event event;
-        
-        try {
-            while (SDL_PollEvent(&event) && running){
-                switch (event.type) {
-                    case SDL_MOUSEBUTTONDOWN:{
-                        
-                        SDL_MouseButtonEvent click = event.button;
-//                        window.crop(600 - click.x, 600 - click.y);
-                                            
-                        NewGUIView* clicked_view =
-                        window.get_main_view()->
-                        get_view_from_point(DispPoint(click.x, click.y));
-                        
-                        if (clicked_view) {
-                            ((FakeGUIView*)bubble)->parent->remove_subview(bubble);
-                            //                        NewGUIImageView *bubble = new NewGUIImageView(GUIImage("images/slider_bubble.bmp"));
-                            clicked_view->attach_subview(bubble, DispPoint(click.x, click.y));
-                        }
-                        cout << clicked_view << endl;
-
-                        window.refresh();
-
-                    }
-                }
-            }
-        }
-        catch(const Error& e) {
-            cout << e.msg << endl;
-        }
-    }
+    nv->attach_subview(new NewGUIButton, DispPoint(440,200));
+    NewGUI_run(&window);
     
     
     
@@ -189,9 +152,11 @@ int test(int argc, char **argv) {
     window.refresh();
     SDL_Delay(2000);
     
+    window.remove_subview(nv);
+
     delete nv2;
     delete nv;
-    
+
     return 0;
 }
 

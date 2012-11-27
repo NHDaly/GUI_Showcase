@@ -42,6 +42,7 @@
 		23A824C61608474D009D0944 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1F315E6C78500A0B545 /* main.cpp */; };
 		23A824C916084962009D0944 /* NewGUIImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A824C816084962009D0944 /* NewGUIImageView.cpp */; };
 		23A824CD16085067009D0944 /* NewGUIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A824CC16085066009D0944 /* NewGUIWindow.cpp */; };
+		23F24D2816649FC000458778 /* NewGUIApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F24D2716649FC000458778 /* NewGUIApp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +122,8 @@
 		23A824CA16084972009D0944 /* NewGUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIImageView.h; sourceTree = "<group>"; };
 		23A824CB16084F76009D0944 /* NewGUIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIWindow.h; sourceTree = "<group>"; };
 		23A824CC16085066009D0944 /* NewGUIWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIWindow.cpp; sourceTree = "<group>"; };
+		23F24D2516649F9D00458778 /* NewGUIApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIApp.h; sourceTree = "<group>"; };
+		23F24D2716649FC000458778 /* NewGUIApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIApp.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,8 @@
 				23A824CC16085066009D0944 /* NewGUIWindow.cpp */,
 				23A824CB16084F76009D0944 /* NewGUIWindow.h */,
 				235B41CC160860A40084D208 /* NewGUIButton.h */,
+				23F24D2516649F9D00458778 /* NewGUIApp.h */,
+				23F24D2716649FC000458778 /* NewGUIApp.cpp */,
 				23A67AEB15E6CAC60056786C /* Compatibility.cpp */,
 				2390F1B015E6C72F00A0B545 /* Compatibility.h */,
 				2390F1B115E6C72F00A0B545 /* GameDisplay.cpp */,
@@ -342,6 +347,7 @@
 				23A824C61608474D009D0944 /* main.cpp in Sources */,
 				23A824C916084962009D0944 /* NewGUIImageView.cpp in Sources */,
 				23A824CD16085067009D0944 /* NewGUIWindow.cpp in Sources */,
+				23F24D2816649FC000458778 /* NewGUIApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
