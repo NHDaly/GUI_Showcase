@@ -133,7 +133,7 @@ int test(int argc, char **argv) {
 //                  DispPoint(), true);
     window.refresh();
    
-    nv->attach_subview(new NewGUIButton, DispPoint(440,200));
+    nv->attach_subview(new NewGUIQuitButton, DispPoint(440,200));
     NewGUI_run(&window);
     
     
