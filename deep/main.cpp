@@ -42,8 +42,12 @@ int user_main (int argc, char **argv) {
     GUIView_shptr_t slider_view(new GUIValue_Display(200, 100,
                                                      static_cast<GUIValue_Box*>(slider.get())));
     win_ctrl.get_window()->attach(slider_view, DispPoint(300,350));
-
     
+
+//    GUIView_shptr_t int_text_box(new GUIInteger_Text_Box(200, 100));
+//    win_ctrl.get_window()->attach(int_text_box, DispPoint(500,350));
+    
+
     win_ctrl.run();
 
     return 0;
@@ -52,6 +56,8 @@ int user_main (int argc, char **argv) {
 #include "gui/NewGUIView.h"
 #include "gui/NewGUIImageView.h"
 #include "gui/NewGUIWindow.h"
+
+#include "SDL/SDL_video.h"
 
 
 struct FakeGUIView {
@@ -84,7 +90,7 @@ int test(int argc, char **argv) {
     
     NewGUIWindow window(600,600, "Window 1");
     
-    GUIImage bg = GUIImage::create_blank(500,500);
+    GUIImage bg = GUIImage::create_blank(200,500);
     SDL_FillRect(bg, 0, SDL_MapRGB(bg->format, 155, 155, 155));
 
     GUIImage bg2 = GUIImage::create_blank(200,200);
@@ -95,7 +101,7 @@ int test(int argc, char **argv) {
     NewGUIView* nv2 = new NewGUIImageView(bg2);
     NewGUIView* nv3 = new NewGUIView(20,20);
     
-    window.set_main_view(nv);
+//    window.attach_view(nv, DispPoint());
     
     nv->attach_subview(nv1, DispPoint(10,10));
     //    nv->attach_subview(nv2, DispPoint(30,10));
@@ -112,7 +118,8 @@ int test(int argc, char **argv) {
     cout << "refresh three: should draw nv1 AND nv2 onto nv" << endl;
     window.refresh();
     
-    
+//    SDL_ShowCursor(1 - SDL_ShowCursor(SDL_QUERY));
+//    cout << "SDL_ShowCursor(SDL_QUERY) " << SDL_ShowCursor(SDL_QUERY) << endl;
     
 //    display_image(nv->image, GUIWin_Ctrl::get()->get_window()->screen,
 //                  DispPoint(), true);
@@ -131,6 +138,7 @@ int test(int argc, char **argv) {
     window.refresh();
    
     
+    
     bool running = true;
     while(running) {
         SDL_Event event;
@@ -141,6 +149,8 @@ int test(int argc, char **argv) {
                     case SDL_MOUSEBUTTONDOWN:{
                         
                         SDL_MouseButtonEvent click = event.button;
+//                        window.crop(600 - click.x, 600 - click.y);
+                                            
                         NewGUIView* clicked_view =
                         window.get_main_view()->
                         get_view_from_point(DispPoint(click.x, click.y));
@@ -151,8 +161,9 @@ int test(int argc, char **argv) {
                             clicked_view->attach_subview(bubble, DispPoint(click.x, click.y));
                         }
                         cout << clicked_view << endl;
+
                         window.refresh();
-                        
+
                     }
                 }
             }
@@ -190,10 +201,8 @@ int main (int argc, char **argv) {
     try {
         
         initGame();
-//        GUIWin_Ctrl& win_ctrl = *GUIWin_Ctrl::get();
-//        GUIView_shptr_t main_screen(new GUIView);
-//        win_ctrl.get_window()->attach(main_screen, DispPoint(0,0));
-        
+        initSDL(SDL_INIT_EVERYTHING);
+//        return user_main(argc, argv);
         return test(argc, argv);
     }
     catch (const QuitAction& q) {
