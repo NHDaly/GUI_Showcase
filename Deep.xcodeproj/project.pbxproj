@@ -72,6 +72,7 @@
 		234A802215E6C6DE00C4AFBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		234A802615E6C6DE00C4AFBC /* Deep-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Deep-Prefix.pch"; sourceTree = "<group>"; };
 		234A802815E6C6DE00C4AFBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		235B41CC160860A40084D208 /* NewGUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIButton.h; sourceTree = "<group>"; };
 		2390F1B015E6C72F00A0B545 /* Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compatibility.h; sourceTree = "<group>"; };
 		2390F1B115E6C72F00A0B545 /* GameDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameDisplay.cpp; sourceTree = "<group>"; };
 		2390F1B215E6C72F00A0B545 /* GameDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDisplay.h; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		23A824CA16084972009D0944 /* NewGUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIImageView.h; sourceTree = "<group>"; };
 		23A824CB16084F76009D0944 /* NewGUIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIWindow.h; sourceTree = "<group>"; };
 		23A824CC16085066009D0944 /* NewGUIWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIWindow.cpp; sourceTree = "<group>"; };
-		23E064881608373A0027E02B /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				2390F1F315E6C78500A0B545 /* main.cpp */,
-				23E064881608373A0027E02B /* test.cpp */,
 				2390F1AE15E6C72F00A0B545 /* gui */,
 				234A801F15E6C6DE00C4AFBC /* Supporting Files */,
 			);
@@ -213,6 +212,7 @@
 				23A824CA16084972009D0944 /* NewGUIImageView.h */,
 				23A824CC16085066009D0944 /* NewGUIWindow.cpp */,
 				23A824CB16084F76009D0944 /* NewGUIWindow.h */,
+				235B41CC160860A40084D208 /* NewGUIButton.h */,
 				23A67AEB15E6CAC60056786C /* Compatibility.cpp */,
 				2390F1B015E6C72F00A0B545 /* Compatibility.h */,
 				2390F1B115E6C72F00A0B545 /* GameDisplay.cpp */,

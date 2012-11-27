@@ -53,6 +53,33 @@ int user_main (int argc, char **argv) {
 #include "gui/NewGUIImageView.h"
 #include "gui/NewGUIWindow.h"
 
+
+struct FakeGUIView {
+public:
+    // Returns true if the mouse_down is finished being handled.
+    // If returns false, handling will continue up the chain.
+    // May optionally call capture_focus() to become the target for keypresses.
+    virtual bool handle_mouse_down(DispPoint coord) { return false; }
+    
+    // These functions will be called by capture/lose focus, and may be
+    // overridden to provide behavior on focus gain/loss.
+    virtual void got_focus() { }
+    virtual void lost_focus() { }
+
+    bool changed;
+    int w,h;
+    DispPoint pos;
+    
+    NewGUIView* background;
+    SDL_Surface* image;
+    SDL_Surface* display;   // includes children drawn on.
+    
+    // Hierarchy
+    NewGUIView* parent;
+    typedef std::list<NewGUIView*> Subview_list_t;
+    Subview_list_t children;
+};
+
 int test(int argc, char **argv) {
     
     NewGUIWindow window(600,600, "Window 1");
@@ -76,7 +103,7 @@ int test(int argc, char **argv) {
     cout << "refresh one: should draw nv1 onto nv" << endl;
     window.refresh();
     
-    nv2->draw_onto_self(nv2, DispPoint());
+    nv2->draw_onto_self(bg2, DispPoint());
     cout << "refresh two ought to do nothing.." << endl;
     window.refresh();
     
@@ -107,19 +134,31 @@ int test(int argc, char **argv) {
     bool running = true;
     while(running) {
         SDL_Event event;
-
-        while (SDL_PollEvent(&event) && running){
-            switch (event.type) {
-                case SDL_MOUSEBUTTONDOWN:{
-                    SDL_MouseButtonEvent click = event.button;
-                    NewGUIView* clicked_view =
+        
+        try {
+            while (SDL_PollEvent(&event) && running){
+                switch (event.type) {
+                    case SDL_MOUSEBUTTONDOWN:{
+                        
+                        SDL_MouseButtonEvent click = event.button;
+                        NewGUIView* clicked_view =
                         window.get_main_view()->
-                                get_view_from_point(DispPoint(click.x, click.y));
-//                    clicked_view->attach_subview(bubble, DispPoint(click.x, click.y));
-                    cout << clicked_view << endl;
-
+                        get_view_from_point(DispPoint(click.x, click.y));
+                        
+                        if (clicked_view) {
+                            ((FakeGUIView*)bubble)->parent->remove_subview(bubble);
+                            //                        NewGUIImageView *bubble = new NewGUIImageView(GUIImage("images/slider_bubble.bmp"));
+                            clicked_view->attach_subview(bubble, DispPoint(click.x, click.y));
+                        }
+                        cout << clicked_view << endl;
+                        window.refresh();
+                        
+                    }
                 }
             }
+        }
+        catch(const Error& e) {
+            cout << e.msg << endl;
         }
     }
     
@@ -160,14 +199,14 @@ int main (int argc, char **argv) {
     catch (const QuitAction& q) {
         cout << "Goodbye!" << endl;
     }
-    catch (const Error& e) {
-        cout << "Error: " << e.msg << endl;
-        throw;
-    }
-    catch (...) {
-        cout << "Unkown Error." << endl;
-        throw;
-    }
+//    catch (const Error& e) {
+//        cout << "Error: " << e.msg << endl;
+//        throw;
+//    }
+//    catch (...) {
+//        cout << "Unkown Error." << endl;
+//        throw;
+//    }
     
     return 0;
 }
