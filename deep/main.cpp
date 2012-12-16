@@ -19,7 +19,9 @@
 #include "gui/NewGUIButton.h"
 
 #include <iostream>
+#include <tr1/functional>
 using namespace std;
+using namespace std::tr1;
 
 int user_main (int argc, char **argv);
 
@@ -54,6 +56,8 @@ int user_main (int argc, char **argv) {
 #include "gui/NewGUIView.h"
 #include "gui/NewGUIImageView.h"
 #include "gui/NewGUIWindow.h"
+#include "gui/NewGUITextBox.h"
+#include "gui/NewGUIValBox.h"
 
 #include "SDL/SDL_video.h"
 
@@ -68,10 +72,10 @@ private:
     NewGUIWindow *window;
 };
 
-class GoToViewButton : public NewGUIButton {
+class GoToViewButton : public NewGUITextButton {
 public:
     GoToViewButton(NewGUIWindow *window_, NewGUIView *view_, DispPoint point_ = DispPoint(0,0))
-    : window(window_), view(view_), point(point_) { }
+    : NewGUITextButton("Go To View"), window(window_), view(view_), point(point_) { }
 protected:
     virtual void operation() {
         window->attach_subview(view, point);
@@ -82,7 +86,42 @@ private:
     DispPoint point;
 };
 
+struct Call {
+    Call(NewGUIValue_Slider *slider, NewGUIValue_Box *text)
+    :sl(slider), tx(text) {}
+    
+    void operator()() {
+        cout << "SETTING VALUE" << endl;
+        sl->set_new_value(tx->get_value());
+    }
+private:
+    NewGUIValue_Slider *sl;
+    NewGUIValue_Box *tx;
+    
+};
+
+class NewGUIQuitButton : public NewGUIButton {
+public:
+    virtual void operation() {
+        throw QuitAction();
+    }
+};
+
+struct Quit_ {};
+void print_goodbye(QuitAction q) {
+    cout << "Goodbye!" << endl;
+    throw Quit_();
+}
+struct PrintGoodbye {
+    void operator()(QuitAction q) {
+        cout << "Goodbye!" << endl;
+        throw Quit_();
+    }
+};
+
 int test(int argc, char **argv) {
+    
+    NewGUIApp::get()->register_error_handler<QuitAction>(PrintGoodbye());
     
     NewGUIWindow window(600,600, "Window 1");
     
@@ -118,8 +157,21 @@ int test(int argc, char **argv) {
     
 
     scd_view->attach_subview(new ReturnButton(&window), DispPoint(300,300));
+    
+    scd_view->attach_subview(new NewGUITextBox(200, 300), DispPoint(20, 200));
+    
+    NewGUIValue_Horiz_Slider *val0 = new NewGUIValue_Horiz_Slider(100);
+    val0->set_range(10, 40);
+    scd_view->attach_subview(val0, DispPoint(20,30));
+    scd_view->attach_subview(new NewGUIValue_Display(400, 30, val0), DispPoint(20,100));
 
-   
+    NewGUIValue_Box *tb = new NewGUIValue_Text_Box(400, 30);
+    scd_view->attach_subview(tb, DispPoint(300,100));
+
+    
+    scd_view->attach_subview(NewGUI_create_button(bind(&NewGUIValue_Slider::set_new_value, val0,
+                                                       bind(&NewGUIValue_Box::get_value, tb))), DispPoint(300,200));
+    
     /*** Link the views ***/
 
     nv->attach_subview(new GoToViewButton(&window, scd_view), DispPoint(200,400));
@@ -127,7 +179,7 @@ int test(int argc, char **argv) {
     /*** Run nv ***/
     window.attach_subview(nv, DispPoint(10,10));
 
-    NewGUI_run(&window);
+    NewGUIApp::get()->run(&window);
     
     
     nv->remove_subview(nv2);
@@ -135,24 +187,21 @@ int test(int argc, char **argv) {
 
     delete nv2;
     delete nv;
-    delete scd_view;
 
     return 0;
 }
 
 
 int main (int argc, char **argv) {
- 
+    initGame();
+    initSDL(SDL_INIT_EVERYTHING);
+//  return user_main(argc, argv);
+    
     try {
-        
-        initGame();
-        initSDL(SDL_INIT_EVERYTHING);
-//        return user_main(argc, argv);
         return test(argc, argv);
     }
-    catch (const QuitAction& q) {
-        cout << "Goodbye!" << endl;
-    }
+    catch(Quit_) { }
+    
 //    catch (const Error& e) {
 //        cout << "Error: " << e.msg << endl;
 //        throw;
