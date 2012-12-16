@@ -46,7 +46,14 @@ public:
     }
     
     
-    
+    virtual bool handle_mouse_up(DispPoint coord) {
+        
+        resize(160,160);
+        
+//        move_to_rel_pos(abs_from_rel(coord)); 
+        
+        return true;
+    }
     
 };
 
