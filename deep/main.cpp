@@ -19,6 +19,7 @@
 #include "gui/NewGUIButton.h"
 
 #include "cat_face.h"
+#include "animation.h"
 
 #include <iostream>
 #include <tr1/functional>
@@ -142,6 +143,8 @@ int test(int argc, char **argv) {
    
     nv->attach_subview(new NewGUIQuitButton, DispPoint(440,200));
     
+    nv->attach_subview(new Anim, DispPoint(150,400));
+
     /*** CREATE SECOND_VIEW ***/
     
     GUIImage bg_full = GUIImage::create_blank(SCREEN_WIDTH, SCREEN_HEIGHT);

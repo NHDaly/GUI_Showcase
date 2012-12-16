@@ -67,6 +67,7 @@
 /* Begin PBXFileReference section */
 		230D7D85167DA16500EE89AA /* cat_face.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cat_face.h; sourceTree = "<group>"; };
 		230D7D86167DA16F00EE89AA /* cat_face.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cat_face.cpp; sourceTree = "<group>"; };
+		230D7D8E167DADF100EE89AA /* animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = animation.h; sourceTree = "<group>"; };
 		2321564B15FDDB4E00516E92 /* NewGUIView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIView.cpp; sourceTree = "<group>"; };
 		2321564E15FDDB5F00516E92 /* NewGUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIView.h; sourceTree = "<group>"; };
 		234252C2166C523D00C0A477 /* NewGUITextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUITextBox.h; sourceTree = "<group>"; };
@@ -199,6 +200,7 @@
 				2390F1F315E6C78500A0B545 /* main.cpp */,
 				230D7D86167DA16F00EE89AA /* cat_face.cpp */,
 				230D7D85167DA16500EE89AA /* cat_face.h */,
+				230D7D8E167DADF100EE89AA /* animation.h */,
 				2390F1AE15E6C72F00A0B545 /* gui */,
 				234A801F15E6C6DE00C4AFBC /* Supporting Files */,
 			);
