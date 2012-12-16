@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230D7D87167DA17000EE89AA /* cat_face.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230D7D86167DA16F00EE89AA /* cat_face.cpp */; };
 		2321564C15FDDB4E00516E92 /* NewGUIView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2321564B15FDDB4E00516E92 /* NewGUIView.cpp */; };
 		234252C5166C524500C0A477 /* NewGUITextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234252C4166C524500C0A477 /* NewGUITextBox.cpp */; };
 		234252C8166C7B0900C0A477 /* NewGUIValBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234252C6166C7B0700C0A477 /* NewGUIValBox.cpp */; };
@@ -64,6 +65,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		230D7D85167DA16500EE89AA /* cat_face.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cat_face.h; sourceTree = "<group>"; };
+		230D7D86167DA16F00EE89AA /* cat_face.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cat_face.cpp; sourceTree = "<group>"; };
 		2321564B15FDDB4E00516E92 /* NewGUIView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIView.cpp; sourceTree = "<group>"; };
 		2321564E15FDDB5F00516E92 /* NewGUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIView.h; sourceTree = "<group>"; };
 		234252C2166C523D00C0A477 /* NewGUITextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUITextBox.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				2390F1F315E6C78500A0B545 /* main.cpp */,
+				230D7D86167DA16F00EE89AA /* cat_face.cpp */,
+				230D7D85167DA16500EE89AA /* cat_face.h */,
 				2390F1AE15E6C72F00A0B545 /* gui */,
 				234A801F15E6C6DE00C4AFBC /* Supporting Files */,
 			);
@@ -226,9 +231,9 @@
 				235B41CC160860A40084D208 /* NewGUIButton.h */,
 				23F24D2716649FC000458778 /* NewGUIApp.cpp */,
 				23F24D2516649F9D00458778 /* NewGUIApp.h */,
-				23E587B0167AFE4400B67333 /* NewGUIErrorHandling.h */,
 				234252C4166C524500C0A477 /* NewGUITextBox.cpp */,
 				234252C2166C523D00C0A477 /* NewGUITextBox.h */,
+				23E587B0167AFE4400B67333 /* NewGUIErrorHandling.h */,
 				234252C6166C7B0700C0A477 /* NewGUIValBox.cpp */,
 				234252C7166C7B0800C0A477 /* NewGUIValBox.h */,
 				23A67AEB15E6CAC60056786C /* Compatibility.cpp */,
@@ -364,6 +369,7 @@
 				23F24D2816649FC000458778 /* NewGUIApp.cpp in Sources */,
 				234252C5166C524500C0A477 /* NewGUITextBox.cpp in Sources */,
 				234252C8166C7B0900C0A477 /* NewGUIValBox.cpp in Sources */,
+				230D7D87167DA17000EE89AA /* cat_face.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

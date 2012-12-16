@@ -18,12 +18,15 @@
 #include "gui/NewGUIView.h"
 #include "gui/NewGUIButton.h"
 
+#include "cat_face.h"
+
 #include <iostream>
 #include <tr1/functional>
 using namespace std;
 using namespace std::tr1;
 
 int user_main (int argc, char **argv);
+int test(int argc, char **argv);
 
 
 int user_main (int argc, char **argv) {
@@ -61,9 +64,10 @@ int user_main (int argc, char **argv) {
 
 #include "SDL/SDL_video.h"
 
-class ReturnButton : public NewGUIButton {
+class ReturnButton : public NewGUITextButton {
 public:
-    ReturnButton(NewGUIWindow *window_) :window(window_) { }
+    ReturnButton(NewGUIWindow *window_) 
+    :NewGUITextButton("Return! Yay!"), window(window_) { }
 protected:
     virtual void operation() {
         window->remove_last_subview();
@@ -72,19 +76,6 @@ private:
     NewGUIWindow *window;
 };
 
-class GoToViewButton : public NewGUITextButton {
-public:
-    GoToViewButton(NewGUIWindow *window_, NewGUIView *view_, DispPoint point_ = DispPoint(0,0))
-    : NewGUITextButton("Go To View"), window(window_), view(view_), point(point_) { }
-protected:
-    virtual void operation() {
-        window->attach_subview(view, point);
-    }
-private:
-    NewGUIWindow *window;
-    NewGUIView *view;
-    DispPoint point;
-};
 
 struct Call {
     Call(NewGUIValue_Slider *slider, NewGUIValue_Box *text)
@@ -100,8 +91,10 @@ private:
     
 };
 
-class NewGUIQuitButton : public NewGUIButton {
+class NewGUIQuitButton : public NewGUITextButton {
 public:
+    NewGUIQuitButton() : NewGUITextButton("QUIT") {}
+    
     virtual void operation() {
         throw QuitAction();
     }
@@ -171,8 +164,25 @@ int test(int argc, char **argv) {
     
     scd_view->attach_subview(NewGUI_create_button(bind(&NewGUIValue_Slider::set_new_value, val0,
                                                        bind(&NewGUIValue_Box::get_value, tb))), DispPoint(300,200));
+
+    scd_view->attach_subview(new CatFace, DispPoint(300,400));
+
     
     /*** Link the views ***/
+
+    class GoToViewButton : public NewGUITextButton {
+    public:
+        GoToViewButton(NewGUIWindow *window_, NewGUIView *view_, DispPoint point_ = DispPoint(0,0))
+        : NewGUITextButton("Go To View"), window(window_), view(view_), point(point_) { }
+    protected:
+        virtual void operation() {
+            window->attach_subview(view, point);
+        }
+    private:
+        NewGUIWindow *window;
+        NewGUIView *view;
+        DispPoint point;
+    };
 
     nv->attach_subview(new GoToViewButton(&window, scd_view), DispPoint(200,400));
     
@@ -201,15 +211,6 @@ int main (int argc, char **argv) {
         return test(argc, argv);
     }
     catch(Quit_) { }
-    
-//    catch (const Error& e) {
-//        cout << "Error: " << e.msg << endl;
-//        throw;
-//    }
-//    catch (...) {
-//        cout << "Unkown Error." << endl;
-//        throw;
-//    }
-    
+        
     return 0;
 }
