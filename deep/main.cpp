@@ -188,7 +188,7 @@ int test(int argc, char **argv) {
     scd_view->attach_subview(NewGUI_create_button(bind(&NewGUIValue_Slider::set_new_value, val0,
                                                        bind(&NewGUIValue_Box::get_value, tb))), DispPoint(300,200));
 
-    scd_view->attach_subview(new CatFace, DispPoint(300,400));
+    scd_view->attach_subview(new CatFace, DispPoint(400,400));
 
     
     /*** Link the views ***/

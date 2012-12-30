@@ -48,10 +48,13 @@ public:
     
     virtual bool handle_mouse_up(DispPoint coord) {
         
-        resize(160,160);
-        
-//        move_to_rel_pos(abs_from_rel(coord)); 
-        
+        if (get_w() == 200) 
+            resize(coord.x,coord.y);
+        else 
+            resize(200, 200);
+        mark_changed();
+        draw_onto_self(GUIImage("images/cat_face_bg.bmp"), DispPoint());
+               
         return true;
     }
     
