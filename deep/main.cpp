@@ -123,6 +123,7 @@ int test(int argc, char **argv) {
     
     NewGUIApp::get()->register_error_handler<QuitAction>(&print_goodbye<QuitAction>);
     
+    NewGUIApp::get()->set_framerate_cap(40);
     
     NewGUIWindow window(600,600, "Window 1");
 
