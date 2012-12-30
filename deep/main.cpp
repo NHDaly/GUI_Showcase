@@ -101,24 +101,32 @@ public:
     }
 };
 
+void print_hello() {
+    cout << "Hello!" << endl;
+}
+
 struct Quit_ {};
-void print_goodbye(QuitAction q) {
+template <typename T>
+void print_goodbye(T t) {
     cout << "Goodbye!" << endl;
-    throw Quit_();
+    throw GUIQuit();
 }
 struct PrintGoodbye {
     void operator()(QuitAction q) {
         cout << "Goodbye!" << endl;
-        throw Quit_();
+        throw GUIQuit();
     }
 };
 
 int test(int argc, char **argv) {
     
-    NewGUIApp::get()->register_error_handler<QuitAction>(PrintGoodbye());
+    
+    NewGUIApp::get()->register_error_handler<QuitAction>(&print_goodbye<QuitAction>);
+    
     
     NewGUIWindow window(600,600, "Window 1");
-    
+
+
     GUIImage bg = GUIImage::create_blank(500,500);
     SDL_FillRect(bg, 0, SDL_MapRGB(bg->format, 155, 155, 155));
 
@@ -131,6 +139,18 @@ int test(int argc, char **argv) {
     NewGUIView* nv2 = new NewGUIImageView(bg2);
     NewGUIView* nv3 = new NewGUIView(20,20);
         
+    
+//    GUIWindow_Stub stub(0, 500, 500, "test");
+//    
+//    //    stub.rename("NEW NAME");
+//    
+//    stub.render_on_screen(nv);
+//    
+//    return 0;
+//    
+//    //    NewGUIApp::get()->run(&stub);
+
+    
     nv->attach_subview(nv1, DispPoint(10,10));
     nv->attach_subview(nv2, DispPoint(100,100));
     nv->move_subview(nv2, DispPoint(30,30));
@@ -210,10 +230,6 @@ int main (int argc, char **argv) {
     initSDL(SDL_INIT_EVERYTHING);
 //  return user_main(argc, argv);
     
-    try {
-        return test(argc, argv);
-    }
-    catch(Quit_) { }
-        
-    return 0;
+    return test(argc, argv);
+
 }

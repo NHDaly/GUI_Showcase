@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Window_Renderer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>233B5F631685AF2C006A6E31</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>234A801315E6C6DD00C4AFBC</key>
 		<dict>
 			<key>primary</key>

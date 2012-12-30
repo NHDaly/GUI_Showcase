@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		230D7D87167DA17000EE89AA /* cat_face.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230D7D86167DA16F00EE89AA /* cat_face.cpp */; };
 		2321564C15FDDB4E00516E92 /* NewGUIView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2321564B15FDDB4E00516E92 /* NewGUIView.cpp */; };
+		232156F11685C1B900088F7F /* GUITimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1C115E6C72F00A0B545 /* GUITimer.cpp */; };
+		233B5F661685AF2C006A6E31 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234A801815E6C6DD00C4AFBC /* Cocoa.framework */; };
+		233B5F7E1685AF47006A6E31 /* NewGUIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A824CC16085066009D0944 /* NewGUIWindow.cpp */; };
+		233B5F7F1685AF49006A6E31 /* GameDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1B115E6C72F00A0B545 /* GameDisplay.cpp */; };
+		233B5F801685AF63006A6E31 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1D315E6C72F00A0B545 /* SDLMain.m */; };
+		233B5F811685AF6F006A6E31 /* NewGUIView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2321564B15FDDB4E00516E92 /* NewGUIView.cpp */; };
+		233B5F821685AF97006A6E31 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E615E6C74900A0B545 /* SDL.framework */; };
+		233B5F831685AF97006A6E31 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E715E6C74900A0B545 /* SDL_image.framework */; };
+		233B5F841685AF97006A6E31 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E815E6C74900A0B545 /* SDL_mixer.framework */; };
+		233B5F851685AF97006A6E31 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E915E6C74900A0B545 /* SDL_ttf.framework */; };
+		233B5F861685AFAD006A6E31 /* NewGUIApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F24D2716649FC000458778 /* NewGUIApp.cpp */; };
 		234252C5166C524500C0A477 /* NewGUITextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234252C4166C524500C0A477 /* NewGUITextBox.cpp */; };
 		234252C8166C7B0900C0A477 /* NewGUIValBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234252C6166C7B0700C0A477 /* NewGUIValBox.cpp */; };
 		234A801915E6C6DD00C4AFBC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234A801815E6C6DD00C4AFBC /* Cocoa.framework */; };
@@ -70,6 +81,7 @@
 		230D7D8E167DADF100EE89AA /* animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = animation.h; sourceTree = "<group>"; };
 		2321564B15FDDB4E00516E92 /* NewGUIView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIView.cpp; sourceTree = "<group>"; };
 		2321564E15FDDB5F00516E92 /* NewGUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIView.h; sourceTree = "<group>"; };
+		233B5F641685AF2C006A6E31 /* Window_Renderer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Window_Renderer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		234252C2166C523D00C0A477 /* NewGUITextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUITextBox.h; sourceTree = "<group>"; };
 		234252C4166C524500C0A477 /* NewGUITextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUITextBox.cpp; sourceTree = "<group>"; };
 		234252C6166C7B0700C0A477 /* NewGUIValBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIValBox.cpp; sourceTree = "<group>"; };
@@ -139,6 +151,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		233B5F611685AF2C006A6E31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233B5F661685AF2C006A6E31 /* Cocoa.framework in Frameworks */,
+				233B5F821685AF97006A6E31 /* SDL.framework in Frameworks */,
+				233B5F831685AF97006A6E31 /* SDL_image.framework in Frameworks */,
+				233B5F841685AF97006A6E31 /* SDL_mixer.framework in Frameworks */,
+				233B5F851685AF97006A6E31 /* SDL_ttf.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		234A801115E6C6DD00C4AFBC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				234A801415E6C6DD00C4AFBC /* Deep.app */,
+				233B5F641685AF2C006A6E31 /* Window_Renderer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,6 +308,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		233B5F631685AF2C006A6E31 /* Window_Renderer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 233B5F791685AF2D006A6E31 /* Build configuration list for PBXNativeTarget "Window_Renderer" */;
+			buildPhases = (
+				233B5F601685AF2C006A6E31 /* Sources */,
+				233B5F611685AF2C006A6E31 /* Frameworks */,
+				233B5F621685AF2C006A6E31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Window_Renderer;
+			productName = Window_Renderer;
+			productReference = 233B5F641685AF2C006A6E31 /* Window_Renderer.app */;
+			productType = "com.apple.product-type.application";
+		};
 		234A801315E6C6DD00C4AFBC /* Deep */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 234A803215E6C6DE00C4AFBC /* Build configuration list for PBXNativeTarget "Deep" */;
@@ -323,11 +365,19 @@
 			projectRoot = "";
 			targets = (
 				234A801315E6C6DD00C4AFBC /* Deep */,
+				233B5F631685AF2C006A6E31 /* Window_Renderer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		233B5F621685AF2C006A6E31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		234A801215E6C6DD00C4AFBC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,6 +392,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		233B5F601685AF2C006A6E31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233B5F811685AF6F006A6E31 /* NewGUIView.cpp in Sources */,
+				233B5F7F1685AF49006A6E31 /* GameDisplay.cpp in Sources */,
+				233B5F7E1685AF47006A6E31 /* NewGUIWindow.cpp in Sources */,
+				233B5F861685AFAD006A6E31 /* NewGUIApp.cpp in Sources */,
+				232156F11685C1B900088F7F /* GUITimer.cpp in Sources */,
+				233B5F801685AF63006A6E31 /* SDLMain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		234A801015E6C6DD00C4AFBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,6 +460,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		233B5F7A1685AF2D006A6E31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Window_Renderer/Window_Renderer-Prefix.pch";
+				INFOPLIST_FILE = "Window_Renderer/Window_Renderer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		233B5F7B1685AF2D006A6E31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Window_Renderer/Window_Renderer-Prefix.pch";
+				INFOPLIST_FILE = "Window_Renderer/Window_Renderer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		234A803015E6C6DE00C4AFBC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -467,6 +552,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		233B5F791685AF2D006A6E31 /* Build configuration list for PBXNativeTarget "Window_Renderer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				233B5F7A1685AF2D006A6E31 /* Debug */,
+				233B5F7B1685AF2D006A6E31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		234A800E15E6C6DD00C4AFBC /* Build configuration list for PBXProject "Deep" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
