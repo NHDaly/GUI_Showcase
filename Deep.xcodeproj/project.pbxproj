@@ -20,6 +20,9 @@
 		233B5F841685AF97006A6E31 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E815E6C74900A0B545 /* SDL_mixer.framework */; };
 		233B5F851685AF97006A6E31 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2390F1E915E6C74900A0B545 /* SDL_ttf.framework */; };
 		233B5F861685AFAD006A6E31 /* NewGUIApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F24D2716649FC000458778 /* NewGUIApp.cpp */; };
+		233FEF9A168FDEDE003FCFE3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1F315E6C78500A0B545 /* main.cpp */; };
+		233FEF9B168FE00D003FCFE3 /* octave_plot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 233FE768168FD098003FCFE3 /* octave_plot.cpp */; };
+		233FEF9E168FE022003FCFE3 /* NathanSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 233FEF9C168FE022003FCFE3 /* NathanSocket.cpp */; };
 		234252C5166C524500C0A477 /* NewGUITextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234252C4166C524500C0A477 /* NewGUITextBox.cpp */; };
 		234252C8166C7B0900C0A477 /* NewGUIValBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234252C6166C7B0700C0A477 /* NewGUIValBox.cpp */; };
 		234A801915E6C6DD00C4AFBC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234A801815E6C6DD00C4AFBC /* Cocoa.framework */; };
@@ -53,7 +56,6 @@
 		23A3DD6E15E6F0160014DE2F /* images in Resources */ = {isa = PBXBuildFile; fileRef = 23A3DD6D15E6F0160014DE2F /* images */; };
 		23A3DD8E15E6F9CC0014DE2F /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 23A3DD8D15E6F9CC0014DE2F /* fonts */; };
 		23A67AEC15E6CAC60056786C /* Compatibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A67AEB15E6CAC60056786C /* Compatibility.cpp */; };
-		23A824C61608474D009D0944 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2390F1F315E6C78500A0B545 /* main.cpp */; };
 		23A824C916084962009D0944 /* NewGUIImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A824C816084962009D0944 /* NewGUIImageView.cpp */; };
 		23A824CD16085067009D0944 /* NewGUIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A824CC16085066009D0944 /* NewGUIWindow.cpp */; };
 		23F24D2816649FC000458778 /* NewGUIApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F24D2716649FC000458778 /* NewGUIApp.cpp */; };
@@ -85,6 +87,8 @@
 		233FE768168FD098003FCFE3 /* octave_plot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = octave_plot.cpp; sourceTree = "<group>"; };
 		233FE76B168FD0A1003FCFE3 /* octave_plot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = octave_plot.h; sourceTree = "<group>"; };
 		233FE76C168FD5F7003FCFE3 /* test_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_main.cpp; sourceTree = "<group>"; };
+		233FEF9C168FE022003FCFE3 /* NathanSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NathanSocket.cpp; sourceTree = "<group>"; };
+		233FEF9D168FE022003FCFE3 /* NathanSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NathanSocket.h; sourceTree = "<group>"; };
 		234252C2166C523D00C0A477 /* NewGUITextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUITextBox.h; sourceTree = "<group>"; };
 		234252C4166C524500C0A477 /* NewGUITextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUITextBox.cpp; sourceTree = "<group>"; };
 		234252C6166C7B0700C0A477 /* NewGUIValBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIValBox.cpp; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				2390F1F315E6C78500A0B545 /* main.cpp */,
+				233FEF9C168FE022003FCFE3 /* NathanSocket.cpp */,
+				233FEF9D168FE022003FCFE3 /* NathanSocket.h */,
 				233FE768168FD098003FCFE3 /* octave_plot.cpp */,
 				233FE76B168FD0A1003FCFE3 /* octave_plot.h */,
 				233FE76C168FD5F7003FCFE3 /* test_main.cpp */,
@@ -434,13 +440,15 @@
 				2390F1E515E6C73000A0B545 /* SDLMain.m in Sources */,
 				23A67AEC15E6CAC60056786C /* Compatibility.cpp in Sources */,
 				2321564C15FDDB4E00516E92 /* NewGUIView.cpp in Sources */,
-				23A824C61608474D009D0944 /* main.cpp in Sources */,
 				23A824C916084962009D0944 /* NewGUIImageView.cpp in Sources */,
 				23A824CD16085067009D0944 /* NewGUIWindow.cpp in Sources */,
 				23F24D2816649FC000458778 /* NewGUIApp.cpp in Sources */,
 				234252C5166C524500C0A477 /* NewGUITextBox.cpp in Sources */,
 				234252C8166C7B0900C0A477 /* NewGUIValBox.cpp in Sources */,
 				230D7D87167DA17000EE89AA /* cat_face.cpp in Sources */,
+				233FEF9A168FDEDE003FCFE3 /* main.cpp in Sources */,
+				233FEF9B168FE00D003FCFE3 /* octave_plot.cpp in Sources */,
+				233FEF9E168FE022003FCFE3 /* NathanSocket.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -118,6 +118,8 @@ struct PrintGoodbye {
     }
 };
 
+#include "octave_plot.h"
+
 int test(int argc, char **argv) {
     
     
@@ -127,7 +129,7 @@ int test(int argc, char **argv) {
     
     NewGUIWindow window(600,600, "Window 1");
 
-
+    
     GUIImage bg = GUIImage::create_blank(500,500);
     SDL_FillRect(bg, 0, SDL_MapRGB(bg->format, 155, 155, 155));
 
@@ -151,6 +153,11 @@ int test(int argc, char **argv) {
 //    
 //    //    NewGUIApp::get()->run(&stub);
 
+//    OctavePlot * plot = new OctavePlot;
+//    plot->rand();
+//    
+//    nv->attach_subview(plot, DispPoint(50,300));
+    
     
     nv->attach_subview(nv1, DispPoint(10,10));
     nv->attach_subview(nv2, DispPoint(100,100));

@@ -6,26 +6,42 @@
 //  Copyright (c) 2012 Lions Entertainment. All rights reserved.
 //
 
-#include <iostream>
+
 #include "octave_plot.h"
 
-#include <octave/oct.h>
-#include <octave/octave.h>
-#include <octave/parse.h>
+#include <iostream>
 
 
 using namespace std;
 
-OctavePlot::OctavePlot() 
-//: NewGUIView(10,10)
-{
-    char *argv[2] = {"embedded", "-q"};
-//    char *argv[0] = {"embedded", "-q"};
-    
-    octave_main(2,argv, 1);  
-//    return embedded;
-    
-    cout << "HI!" << endl;
+#define kOctavePlotSocket 12123
 
+
+OctavePlot::OctavePlot() 
+: client(kOctavePlotSocket)
+{
+    client.connect();
 }
 
+void OctavePlot::rand() 
+{   
+    // message
+    string size = "4";
+    size.append("\0", 1);
+    client.send(size);
+    client.send("rand");
+
+    // num args
+    size = "1";
+    size.append("\0", 1);
+    client.send(size);
+    
+    // args
+    size = "5";
+    size.append("\0", 1);
+    client.send(size);
+    client.send("state");
+    
+    
+    
+}

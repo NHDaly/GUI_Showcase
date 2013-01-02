@@ -9,17 +9,25 @@
 #ifndef Deep_octave_plot_h
 #define Deep_octave_plot_h
 
-//#include "NewGUIView.h"
+#include "NewGUIView.h"
+#include "NewGUIButton.h"
+#include "NathanSocket.h"
 
-class OctavePlot  //: public NewGUIView
+class OctavePlot : public NewGUIButton
 {
 public:
     
     OctavePlot();
     
+    void rand();
     
+private:
+    Socket_Client client;
     
-    
+    virtual void operation() {
+        rand();
+    }
+
 };
 
 #endif
