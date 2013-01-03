@@ -186,7 +186,7 @@ int test(int argc, char **argv) {
     
     /*** CREATE SECOND_VIEW ***/
     
-    GUIImage bg_full = GUIImage::create_blank(SCREEN_WIDTH, SCREEN_HEIGHT);
+    GUIImage bg_full = GUIImage::create_blank(window.get_dim().x, window.get_dim().y);
     SDL_FillRect(bg_full, 0, SDL_MapRGB(bg->format, 155, 155, 155));
     NewGUIView *scd_view = new NewGUIImageView(bg_full);
     
