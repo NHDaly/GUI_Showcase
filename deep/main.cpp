@@ -17,6 +17,7 @@
 #include "gui/NewGUIApp.h"
 #include "gui/NewGUIView.h"
 #include "gui/NewGUIButton.h"
+#include "gui/GUIScrollView.h"
 
 #include "cat_face.h"
 #include "animation.h"
@@ -118,7 +119,7 @@ struct PrintGoodbye {
     }
 };
 
-#include "octave_plot.h"
+//#include "octave_plot.h"
 
 int test(int argc, char **argv) {
     
@@ -128,7 +129,7 @@ int test(int argc, char **argv) {
     NewGUIApp::get()->set_framerate_cap(40);
     
     NewGUIWindow window(600,600, "Window 1");
-
+    
     
     GUIImage bg = GUIImage::create_blank(500,500);
     SDL_FillRect(bg, 0, SDL_MapRGB(bg->format, 155, 155, 155));
@@ -173,6 +174,16 @@ int test(int argc, char **argv) {
     
     nv->attach_subview(new Anim, DispPoint(150,400));
 
+    nv->attach_subview(new GUIScrollView(100,300,
+                                         new NewGUIImageView(GUIImage("images/coins_screen_shot.bmp"))), DispPoint(250,50));
+    nv->attach_subview(new GUIScrollView(100,300,
+                                         new NewGUIImageView(GUIImage("images/cat_face_bg.bmp"))), DispPoint(375,0));
+    
+    // A view can capture focus without ever being attached to a window!
+    NewGUIView view(100,100);
+    view.capture_focus();
+
+    
     /*** CREATE SECOND_VIEW ***/
     
     GUIImage bg_full = GUIImage::create_blank(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -182,7 +193,12 @@ int test(int argc, char **argv) {
 
     scd_view->attach_subview(new ReturnButton(&window), DispPoint(300,300));
     
-    scd_view->attach_subview(new NewGUITextBox(200, 300), DispPoint(20, 200));
+    SDL_Color light = {0xdd, 0xdd, 0xdd};
+    NewGUIView *text_view = new NewGUIImageView(GUIImage::create_filled(200, 300, light));
+    text_view->attach_subview(new GUIScrollView(200,300, new NewGUITextBox(200, 310, true)), DispPoint());
+//    text_view->attach_subview(new NewGUITextBox(150, 150, false, true), DispPoint());
+    
+    scd_view->attach_subview(text_view, DispPoint(20, 200));
     
     NewGUIValue_Horiz_Slider *val0 = new NewGUIValue_Horiz_Slider(100);
     val0->set_range(10, 40);
@@ -217,6 +233,7 @@ int test(int argc, char **argv) {
 
     nv->attach_subview(new GoToViewButton(&window, scd_view), DispPoint(200,400));
     
+    
     /*** Run nv ***/
     window.attach_subview(nv, DispPoint(10,10));
 
@@ -234,7 +251,8 @@ int test(int argc, char **argv) {
 
 
 int main (int argc, char **argv) {
-    initGame();
+
+    initGUI();
     initSDL(SDL_INIT_EVERYTHING);
 //  return user_main(argc, argv);
     

@@ -58,6 +58,8 @@
 		23A67AEC15E6CAC60056786C /* Compatibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A67AEB15E6CAC60056786C /* Compatibility.cpp */; };
 		23A824C916084962009D0944 /* NewGUIImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A824C816084962009D0944 /* NewGUIImageView.cpp */; };
 		23A824CD16085067009D0944 /* NewGUIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A824CC16085066009D0944 /* NewGUIWindow.cpp */; };
+		23ADD322169507BE00DA23DC /* NewGUIController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23ADD321169507B700DA23DC /* NewGUIController.cpp */; };
+		23DBD00716951E0F00DC6625 /* GUIScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DBD00616951E0F00DC6625 /* GUIScrollView.cpp */; };
 		23F24D2816649FC000458778 /* NewGUIApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F24D2716649FC000458778 /* NewGUIApp.cpp */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +154,10 @@
 		23A824CA16084972009D0944 /* NewGUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIImageView.h; sourceTree = "<group>"; };
 		23A824CB16084F76009D0944 /* NewGUIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIWindow.h; sourceTree = "<group>"; };
 		23A824CC16085066009D0944 /* NewGUIWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIWindow.cpp; sourceTree = "<group>"; };
+		23ADD31F1695043200DA23DC /* NewGUIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIController.h; sourceTree = "<group>"; };
+		23ADD321169507B700DA23DC /* NewGUIController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIController.cpp; sourceTree = "<group>"; };
+		23DBD00616951E0F00DC6625 /* GUIScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIScrollView.cpp; sourceTree = "<group>"; };
+		23DBD00916951E1600DC6625 /* GUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIScrollView.h; sourceTree = "<group>"; };
 		23E587B0167AFE4400B67333 /* NewGUIErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIErrorHandling.h; sourceTree = "<group>"; };
 		23F24D2516649F9D00458778 /* NewGUIApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGUIApp.h; sourceTree = "<group>"; };
 		23F24D2716649FC000458778 /* NewGUIApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUIApp.cpp; sourceTree = "<group>"; };
@@ -275,6 +281,10 @@
 				23E587B0167AFE4400B67333 /* NewGUIErrorHandling.h */,
 				234252C6166C7B0700C0A477 /* NewGUIValBox.cpp */,
 				234252C7166C7B0800C0A477 /* NewGUIValBox.h */,
+				23ADD321169507B700DA23DC /* NewGUIController.cpp */,
+				23ADD31F1695043200DA23DC /* NewGUIController.h */,
+				23DBD00616951E0F00DC6625 /* GUIScrollView.cpp */,
+				23DBD00916951E1600DC6625 /* GUIScrollView.h */,
 				23A67AEB15E6CAC60056786C /* Compatibility.cpp */,
 				2390F1B015E6C72F00A0B545 /* Compatibility.h */,
 				2390F1B115E6C72F00A0B545 /* GameDisplay.cpp */,
@@ -449,6 +459,8 @@
 				233FEF9A168FDEDE003FCFE3 /* main.cpp in Sources */,
 				233FEF9B168FE00D003FCFE3 /* octave_plot.cpp in Sources */,
 				233FEF9E168FE022003FCFE3 /* NathanSocket.cpp in Sources */,
+				23ADD322169507BE00DA23DC /* NewGUIController.cpp in Sources */,
+				23DBD00716951E0F00DC6625 /* GUIScrollView.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
