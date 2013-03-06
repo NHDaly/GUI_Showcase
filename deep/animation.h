@@ -9,17 +9,17 @@
 #ifndef Deep_animation_h
 #define Deep_animation_h
 
-#include "gui/NewGUIImageView.h"
-#include "gui/NewGUIApp.h"
+#include "gui/GUIImageView.h"
+#include "gui/GUIApp.h"
 
 #include <vector>
 #include <tr1/functional>
 
-class Anim : public NewGUIImageView {
+class Anim : public GUIImageView {
 public:  
     
     Anim()
-    : NewGUIImageView(GUIImage("images/anim0.bmp")), frame(0)
+    : GUIImageView(GUIImage("images/anim0.bmp")), frame(0)
     {
         images.push_back(GUIImage("images/anim0.bmp"));
         images.push_back(GUIImage("images/anim1.bmp"));
@@ -28,7 +28,7 @@ public:
         
         SDL_Color clear = {0,0xff,0};
         set_clear_color(clear);
-        NewGUIApp::get()->repeat_on_timer(std::tr1::bind(&Anim::update, this), 0.25);
+        GUIApp::get()->repeat_on_timer(std::tr1::bind(&Anim::update, this), 0.25);
     }
     
     void update() {

@@ -9,11 +9,11 @@
 #ifndef Deep_octave_plot_h
 #define Deep_octave_plot_h
 
-#include "NewGUIView.h"
-#include "NewGUIButton.h"
+#include "GUIView.h"
+#include "GUIButton.h"
 #include "NathanSocket.h"
 
-class OctavePlot : public NewGUIButton
+class OctavePlot : public GUIButton
 {
 public:
     
