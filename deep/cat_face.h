@@ -9,16 +9,18 @@
 #ifndef Deep_cat_face_h
 #define Deep_cat_face_h
 
-#include "gui/GUIImageView.h"
+#include "GUI/GUIImageView.h"
+
+using GUI::DispPoint;
 
 extern SDL_Color cat_green;
 
-class Eye : public GUIImageView {
+class Eye : public GUI::ImageView {
 public:
     
     Eye() 
-    : GUIImageView(GUIImage("images/cat_eye_bg.bmp")),
-    pupil(new GUIImageView(GUIImage("images/cat_eye_pupil.bmp"))) {
+    : GUI::ImageView(GUIImage("images/cat_eye_bg.bmp")),
+    pupil(new GUI::ImageView(GUIImage("images/cat_eye_pupil.bmp"))) {
         set_clear_color(cat_green);
         capture_focus();
         pupil->set_clear_color(cat_green);
@@ -29,15 +31,15 @@ protected:
     virtual bool handle_mouse_motion(DispPoint coord, DispPoint rel_motion);
     
 private:
-    GUIImageView *pupil;
+    GUI::ImageView *pupil;
                        
 };
 
-class CatFace : public GUIView {
+class CatFace : public GUI::View {
 public:
     
     CatFace()
-    : GUIView(200,200)
+    : GUI::View(200,200)
     {
         set_clear_color(cat_green);
         draw_onto_self(GUIImage("images/cat_face_bg.bmp"), DispPoint());

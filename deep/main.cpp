@@ -14,9 +14,9 @@
 #include "gui/GUIValBox.h"
 
 #include "gui/GUIApp.h"
-#include "gui/GUIView.h"
-#include "gui/GUIButton.h"
-#include "gui/GUIScrollView.h"
+#include "GUI/GUIView.h"
+#include "GUI/GUIButton.h"
+#include "GUI/GUIScrollView.h"
 
 #include "cat_face.h"
 #include "animation.h"
@@ -28,6 +28,7 @@ using namespace std::tr1;
 
 int user_main (int argc, char **argv);
 int test(int argc, char **argv);
+void print_bye(GUI::Quit);
 
 
 #include "gui/GUIView.h"
@@ -35,24 +36,25 @@ int test(int argc, char **argv);
 #include "gui/GUIWindow.h"
 #include "gui/GUITextViews.h"
 #include "gui/GUIValBox.h"
+#include "gui/NewNewGUITextView.h"
 
 #include "SDL/SDL_video.h"
 
-class ReturnButton : public GUITextButton {
+class ReturnButton : public GUI::TextButton {
 public:
-    ReturnButton(GUIWindow *window_) 
-    :GUITextButton("Return! Yay!"), window(window_) { }
+    ReturnButton(GUI::Window *window_) 
+    :GUI::TextButton("Return! Yay!"), window(window_) { }
 protected:
     virtual void operation() {
         window->remove_last_subview();
     }
 private:
-    GUIWindow *window;
+    GUI::Window *window;
 };
 
 
 struct Call {
-    Call(GUIValue_Slider *slider, GUIValue_Box *text)
+    Call(GUI::Value_Slider *slider, GUI::Value_Box *text)
     :sl(slider), tx(text) {}
     
     void operator()() {
@@ -60,17 +62,17 @@ struct Call {
         sl->set_new_value(tx->get_value());
     }
 private:
-    GUIValue_Slider *sl;
-    GUIValue_Box *tx;
+    GUI::Value_Slider *sl;
+    GUI::Value_Box *tx;
     
 };
 
-class GUIQuitButton : public GUITextButton {
+class GUIQuitButton : public GUI::TextButton {
 public:
-    GUIQuitButton() : GUITextButton("QUIT") {}
+    GUIQuitButton() : GUI::TextButton("QUIT") {}
     
     virtual void operation() {
-        throw QuitAction();
+        throw GUI::Quit();
     }
 };
 
@@ -78,16 +80,17 @@ void print_hello() {
     cout << "Hello!" << endl;
 }
 
-struct Quit_ {};
-template <typename T>
-void print_goodbye(T t) {
+void print_bye(GUI::Quit) {
     cout << "Goodbye!" << endl;
-    throw GUIQuit();
+}
+
+template <typename T>
+void print_goodbye(T) {
+    cout << "Goodbye!" << endl;
 }
 struct PrintGoodbye {
-    void operator()(Quit_ q) {
+    void operator()(GUI::Quit) {
         cout << "Goodbye!" << endl;
-        throw GUIQuit();
     }
 };
 
@@ -96,11 +99,11 @@ struct PrintGoodbye {
 int test(int argc, char **argv) {
     
     
-    GUIApp::get()->register_exception_handler<Quit_>(&print_goodbye<Quit_>);
+    GUI::App::get()->register_exception_handler<GUI::Quit>(&print_bye);
     
-    GUIApp::get()->set_framerate_cap(40);
+    GUI::App::get()->set_framerate_cap(40);
     
-    GUIWindow window(600,600, "Window 1");
+    GUI::Window window(600,600, "Window 1");
     
     
     GUIImage bg = GUIImage::create_blank(500,500);
@@ -110,13 +113,13 @@ int test(int argc, char **argv) {
     SDL_FillRect(bg2, 0, SDL_MapRGB(bg2->format, 255, 100, 100));
 
     /*** CREATE NV ***/
-    GUIView* nv = new GUIImageView(bg);
-    GUIView* nv1 = new GUIView(50,50);
-    GUIView* nv2 = new GUIImageView(bg2);
-    GUIView* nv3 = new GUIView(20,20);
+    GUI::View* nv = new GUI::ImageView(bg);
+    GUI::View* nv1 = new GUI::View(50,50);
+    GUI::View* nv2 = new GUI::ImageView(bg2);
+    GUI::View* nv3 = new GUI::View(20,20);
         
     
-//    GUIWindow_Stub stub(0, 500, 500, "test");
+//    GUI::Window_Stub stub(0, 500, 500, "test");
 //    
 //    //    stub.rename("NEW NAME");
 //    
@@ -124,7 +127,7 @@ int test(int argc, char **argv) {
 //    
 //    return 0;
 //    
-//    //    GUIApp::get()->run(&stub);
+//    //    GUI::App::get()->run(&stub);
 
 //    OctavePlot * plot = new OctavePlot;
 //    plot->rand();
@@ -137,7 +140,7 @@ int test(int argc, char **argv) {
     nv->move_subview(nv2, DispPoint(30,30));
     
     
-    nv2->attach_subview(new GUIImageView(GUIImage("images/slider_bubble.bmp")),
+    nv2->attach_subview(new GUI::ImageView(GUIImage("images/slider_bubble.bmp")),
                         DispPoint(120, 100));
 
     nv2->attach_subview(nv3, DispPoint(180, 150));
@@ -146,13 +149,13 @@ int test(int argc, char **argv) {
     
     nv->attach_subview(new Anim, DispPoint(150,400));
 
-    nv->attach_subview(new GUIScrollView(100,300,
-                                         new GUIImageView(GUIImage("images/coins_screen_shot.bmp"))), DispPoint(250,50));
-    nv->attach_subview(new GUIScrollView(100,300,
-                                         new GUIImageView(GUIImage("images/cat_face_bg.bmp"))), DispPoint(375,0));
+    nv->attach_subview(new GUI::ScrollView(100,300,
+                                         new GUI::ImageView(GUIImage("images/coins_screen_shot.bmp"))), DispPoint(250,50));
+    nv->attach_subview(new GUI::ScrollView(100,300,
+                                         new GUI::ImageView(GUIImage("images/cat_face_bg.bmp"))), DispPoint(375,0));
     
     // A view can capture focus without ever being attached to a window!
-    GUIView view(100,100);
+    GUI::View view(100,100);
     view.capture_focus();
 
     
@@ -160,47 +163,74 @@ int test(int argc, char **argv) {
     
     GUIImage bg_full = GUIImage::create_blank(window.get_dim().x, window.get_dim().y);
     SDL_FillRect(bg_full, 0, SDL_MapRGB(bg->format, 155, 155, 155));
-    GUIView *scd_view = new GUIImageView(bg_full);
+    GUI::View *scd_view = new GUI::ImageView(bg_full);
     
 
     scd_view->attach_subview(new ReturnButton(&window), DispPoint(300,300));
     
+    int text_box_h = 200;
     SDL_Color light = {0xdd, 0xdd, 0xdd};
-    GUIView *text_view = new GUIImageView(GUIImage::create_filled(200, 300, light));
-//    text_view->attach_subview(new GUIScrollView(200,300, new GUITextBox(200, 310, true)), DispPoint());
-    text_view->attach_subview(new GUIScrollView(200,300, new GUITextBox(200, 310)), DispPoint());
-//    text_view->attach_subview(new GUITextBox(150, 150, false, true), DispPoint());
+
+    GUI::View *text_bg_view = new GUI::ScrollView(200,text_box_h, new GUI::TextBox(200, text_box_h+10));
+                                                  
+//    GUI::View *text_bg_view = new GUI::ImageView(GUIImage::create_filled(200, text_box_h, light));
+////    text_view->attach_subview(new GUI::ScrollView(200,300, new GUI::TextBox(200, 310, true)), DispPoint());
+//    text_bg_view->attach_subview(new GUI::ScrollView(200,text_box_h, new GUI::TextBox(200, text_box_h+10)), DispPoint());
+////    text_view->attach_subview(new GUI::TextBox(150, 150, false, true), DispPoint());
     
-    scd_view->attach_subview(text_view, DispPoint(20, 200));
+    scd_view->attach_subview(text_bg_view, DispPoint(20, 200));
+
+    // New New TextView Test
+    {
+        GUI::View *text_bg_2 = new GUI::ImageView(GUIImage::create_filled(100, 100, light));
+        GUI::NewTextView *new_text_view = new GUI::NewTextView(100,100);
+        text_bg_2->attach_subview(new_text_view, DispPoint());
+        
+        new_text_view->set_text("HI!");
+        
+        scd_view->attach_subview(text_bg_2, DispPoint(20, 420));
+    }
     
-    GUIValue_Horiz_Slider *val0 = new GUIValue_Horiz_Slider(100);
+    // vs. Old TextView
+    {
+        GUI::View *text_bg_2 = new GUI::ImageView(GUIImage::create_filled(100, 100, light));
+        GUI::TextView *new_text_view = new GUI::TextView(100,100);
+        text_bg_2->attach_subview(new_text_view, DispPoint());
+        
+        new_text_view->set_text("HI!");
+        
+        scd_view->attach_subview(text_bg_2, DispPoint(220, 420));
+    }
+    
+    
+    GUI::Value_Horiz_Slider *val0 = new GUI::Value_Horiz_Slider(100);
     val0->set_range(10, 40);
     scd_view->attach_subview(val0, DispPoint(20,30));
-    scd_view->attach_subview(new GUIValue_Display(400, 30, val0), DispPoint(20,100));
+    scd_view->attach_subview(new GUI::Value_Display(400, 30, val0), DispPoint(20,100));
 
-    GUIValue_Box *tb = new GUIValue_Text_Box(400, 30);
+    GUI::Value_Box *tb = new GUI::Value_Text_Box(400, 30);
     scd_view->attach_subview(tb, DispPoint(300,100));
 
     
-    scd_view->attach_subview(GUI_create_button(bind(&GUIValue_Slider::set_new_value, val0,
-                                                       bind(&GUIValue_Box::get_value, tb))), DispPoint(300,200));
+    scd_view->attach_subview(GUI::create_button(bind(&GUI::Value_Slider::set_new_value, val0,
+                                                       bind(&GUI::Value_Box::get_value, tb))), DispPoint(300,200));
 
     scd_view->attach_subview(new CatFace, DispPoint(400,400));
 
     
     /*** Link the views ***/
 
-    class GoToViewButton : public GUITextButton {
+    class GoToViewButton : public GUI::TextButton {
     public:
-        GoToViewButton(GUIWindow *window_, GUIView *view_, DispPoint point_ = DispPoint(0,0))
-        : GUITextButton("Go To View"), window(window_), view(view_), point(point_) { }
+        GoToViewButton(GUI::Window *window_, GUI::View *view_, DispPoint point_ = DispPoint(0,0))
+        : GUI::TextButton("Go To View"), window(window_), view(view_), point(point_) { }
     protected:
         virtual void operation() {
             window->attach_subview(view, point);
         }
     private:
-        GUIWindow *window;
-        GUIView *view;
+        GUI::Window *window;
+        GUI::View *view;
         DispPoint point;
     };
 
@@ -210,7 +240,7 @@ int test(int argc, char **argv) {
     /*** Run nv ***/
     window.attach_subview(nv, DispPoint(10,10));
 
-    GUIApp::get()->run(&window);
+    GUI::App::get()->run(&window);
     
     
     nv->remove_subview(nv2);
@@ -226,7 +256,6 @@ int test(int argc, char **argv) {
 int main (int argc, char **argv) {
 
     initGUI();
-    initSDL(SDL_INIT_EVERYTHING);
 //  return user_main(argc, argv);
     
     return test(argc, argv);

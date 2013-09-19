@@ -15,11 +15,11 @@
 #include <vector>
 #include <tr1/functional>
 
-class Anim : public GUIImageView {
+class Anim : public GUI::ImageView {
 public:  
     
     Anim()
-    : GUIImageView(GUIImage("images/anim0.bmp")), frame(0)
+    : GUI::ImageView(GUIImage("images/anim0.bmp")), frame(0)
     {
         images.push_back(GUIImage("images/anim0.bmp"));
         images.push_back(GUIImage("images/anim1.bmp"));
@@ -28,7 +28,7 @@ public:
         
         SDL_Color clear = {0,0xff,0};
         set_clear_color(clear);
-        GUIApp::get()->repeat_on_timer(std::tr1::bind(&Anim::update, this), 0.25);
+        GUI::App::get()->repeat_on_timer(std::tr1::bind(&Anim::update, this), 0.25);
     }
     
     void update() {
